@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, camel_case_types
-class produto {
+import 'package:flutter/cupertino.dart';
+
+class produto with ChangeNotifier {
   final String id;
   final String title;
   final String description;
@@ -18,5 +20,6 @@ class produto {
 
   void toggleFavorite() {
     isFavorite = !isFavorite;
+    notifyListeners();
   }
 }
