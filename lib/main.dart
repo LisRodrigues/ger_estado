@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:ger_estado/models/cart.dart';
 import 'package:ger_estado/models/product_list.dart';
+import 'package:ger_estado/pages/cart_page.dart';
 import 'package:ger_estado/pages/podutos_overview_page.dart';
 import 'package:ger_estado/pages/product_detaill_page.dart';
 import 'package:ger_estado/utils/app_routes.dart';
@@ -17,8 +19,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final theme = ThemeData();
-    return ChangeNotifierProvider(
-      create: (_) => ProductList(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => ProductList(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => Cart(),
+        ),
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -26,7 +35,10 @@ class MyApp extends StatelessWidget {
                 .copyWith(secondary: Colors.deepOrange),
             fontFamily: 'Lato'),
         home: ProdutosOverviewPage(),
-        routes: {AppRoutes.PRODUCT_DETAILS: (ctx) => ProductDetailPage()},
+        routes: {
+          AppRoutes.PRODUCT_DETAILS: (ctx) => ProductDetailPage(),
+          AppRoutes.CART: (ctx) => CartPage(),
+        },
         debugShowCheckedModeBanner: false,
       ),
     );
