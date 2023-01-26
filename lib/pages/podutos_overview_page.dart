@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:ger_estado/components/app_drawer.dart';
 import 'package:ger_estado/components/badge.dart';
 import 'package:ger_estado/components/product_grid.dart';
 import 'package:ger_estado/models/cart.dart';
@@ -29,7 +30,7 @@ class _ProdutosOverviewPageState extends State<ProdutosOverviewPage> {
         title: Text("Minha loja"),
         actions: [
           PopupMenuButton(
-            icon: Icon(Icons.menu_rounded),
+            icon: Icon(Icons.more_vert),
             itemBuilder: (_) => [
               PopupMenuItem(
                 child: Text('Somente favoritos'),
@@ -64,6 +65,7 @@ class _ProdutosOverviewPageState extends State<ProdutosOverviewPage> {
       body: ProductGrid(
         _showFavoriteOnly,
       ),
+      drawer: AppDrawer(),
     );
   }
 }
