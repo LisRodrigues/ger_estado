@@ -8,6 +8,7 @@ import 'package:ger_estado/pages/cart_page.dart';
 import 'package:ger_estado/pages/orders_page.dart';
 import 'package:ger_estado/pages/podutos_overview_page.dart';
 import 'package:ger_estado/pages/product_detaill_page.dart';
+import 'package:ger_estado/pages/product_page.dart';
 import 'package:ger_estado/utils/app_routes.dart';
 import 'package:provider/provider.dart';
 
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.PRODUCT_DETAILS: (ctx) => ProductDetailPage(),
           AppRoutes.CART: (ctx) => CartPage(),
           AppRoutes.ORDERS: (ctx) => OrdersPage(),
+          AppRoutes.PRODUCTS: (ctx) => ProductsPage(),
         },
         debugShowCheckedModeBanner: false,
       ),

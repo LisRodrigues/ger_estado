@@ -3,8 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'package:ger_estado/components/products_item.dart';
+import 'package:ger_estado/components/products_grid__item.dart';
 import 'package:ger_estado/models/product_list.dart';
 import 'package:ger_estado/models/produtos.dart';
 
@@ -25,7 +24,7 @@ class ProductGrid extends StatelessWidget {
       itemCount: loadedProdutos.length,
       //Diz como vai ser construida casa coisa do gridview
       itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
-          value: loadedProdutos[i], child: ProdutoItem()),
+          value: loadedProdutos[i], child: ProductGridItem()),
       //slivergride = Quando vc tem uma área dentro de algo rolável com uma quantidade fixa na linha. Basicamente, ele define uma estrutura com x elementos em cada linha
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           //Quantidade de itens por linha
